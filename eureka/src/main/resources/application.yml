@@ -1,0 +1,21 @@
+app:
+    name: register
+
+server:
+    port: 9080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+       defaultZone: http://localhost:${server.port}/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: sandog
+    password: 123456

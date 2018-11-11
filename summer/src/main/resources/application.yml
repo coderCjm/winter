@@ -1,0 +1,20 @@
+app:
+    name: summer
+
+server:
+    port: 9082
+
+eureka:
+  client:
+    service-url:
+       defaultZone: http://sandog:123456@localhost:9080/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: summer
+
+feign:
+  hystrix:
+     enabled: true

@@ -1,0 +1,16 @@
+app:
+    name: autumn
+
+server:
+    port: 9081
+
+eureka:
+  client:
+    service-url:
+       defaultZone: http://sandog:123456@localhost:9080/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: autumn
