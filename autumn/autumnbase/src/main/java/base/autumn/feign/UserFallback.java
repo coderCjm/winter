@@ -1,28 +1,13 @@
-package com.summer.feign;
+package base.autumn.feign;
 
 import base.autumn.model.User;
 import base.autumn.protocol.transport.AutumnResponse;
 import feign.hystrix.FallbackFactory;
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by sandog on 2018/11/10.
+ * Created by sandog on 2018/11/13.
  */
-@FeignClient(name = "autumn", fallbackFactory = UserFallback.class)
-public interface UserFeignClient {
-
-    @RequestMapping(value = "/user/get", method = RequestMethod.GET)
-    AutumnResponse findById(@RequestParam("id") Integer id);
-
-    @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    AutumnResponse addUser(@RequestBody User user);
-
-}
-
-@Component(value = "fallbackFactory")
-class UserFallback implements FallbackFactory<UserFeignClient> {
+public class UserFallback implements FallbackFactory<UserFeignClient> {
 
     @Override
     public UserFeignClient create(Throwable throwable) {

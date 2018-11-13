@@ -1,8 +1,8 @@
 package com.summer.controller;
 
+import base.autumn.feign.UserFeignClient;
 import base.autumn.model.User;
 import base.autumn.protocol.transport.AutumnResponse;
-import com.summer.feign.UserFeignClient;
 import com.summer.protocol.convert.Convert;
 import com.summer.protocol.transport.SummerResponse;
 import com.summer.protocol.vo.UserVO;

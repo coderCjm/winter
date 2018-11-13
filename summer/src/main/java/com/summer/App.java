@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @EnableZuulProxy
 @EnableCircuitBreaker
-@EnableFeignClients
+@EnableFeignClients(basePackages = "base.autumn.feign")
 public class App {
 
     @Bean

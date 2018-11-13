@@ -1,5 +1,6 @@
 package core.autumn.contoller;
 
+import base.autumn.feign.UserFeignClient;
 import base.autumn.protocol.transport.AutumnResponse;
 import base.autumn.model.User;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @RequestMapping(value = "/user")
 @RestController
-public class UserController {
+public class UserController implements UserFeignClient {
 
     private static Map<Integer, User> map = new ConcurrentHashMap<Integer, User>();
 
@@ -27,7 +28,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get", method = {RequestMethod.GET}, produces = {"application/json;charset=UTF-8"})
-    public AutumnResponse GetUser(Integer id) {
+    @Override
+    public AutumnResponse findById(Integer id) {
         AutumnResponse response = new AutumnResponse();
         User user = findUserById(id);
         if (user == null) {
@@ -45,7 +47,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/add", method = {RequestMethod.POST}, produces = {"application/json;charset=UTF-8"})
-    public AutumnResponse PdPurchase(@RequestBody User user) {
+    @Override
+    public AutumnResponse addUser(@RequestBody User user) {
         int len = map.size();
         int id = len + 1;
         User iUser = new User(id, user.getName());
