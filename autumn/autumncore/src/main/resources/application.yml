@@ -1,9 +1,6 @@
 app:
     name: autumn
 
-server:
-    port: 9081
-
 eureka:
   client:
     service-url:
@@ -24,3 +21,16 @@ spring:
 logging:
   level: info
 
+---
+spring:
+  profiles: peer1
+
+server:
+    port: 9091
+
+---
+spring:
+  profiles: peer2
+
+server:
+    port: 9092

@@ -25,7 +25,19 @@
 
 - 服务生产者
 
+- 启动步骤
+
+   1. mvn clean install
+   2. 进入 autumncore 执行 mvn package
+   3. 将打包生成的 autumn.jar 复制到两个文件夹 
+   3. 在第一个文件夹 执行 java -jar autumn.jar --spring.profiles.active=peer1
+   4. 在第二个文件夹 执行 java -jar autumn.jar --spring.profiles.active=peer2
+
 ## summer
 
 - 服务消费者
 
+- 启动步骤
+
+   1. 编译器直接执行 main 方法
+   2. 浏览器 http://localhost:9082/user/get?id=3 查看各个项目打印的日志
