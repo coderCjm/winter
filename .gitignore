@@ -2,3 +2,7 @@ autumn/.idea
 eureka/.idea
 summer/.idea
 *.iml
+autumn/autumnbase/target
+autumn/autumncore/target
+summer/target
+eureka/target

@@ -34,6 +34,11 @@ public class UserController {
             response.setStatus(AutumnResponse.STATUS_FAIL);
             return response;
         }
+        try {
+            Thread.sleep(500);
+        } catch (Exception e) {
+
+        }
         response.setUser(user);
         System.out.println(response.toString());
         return response;

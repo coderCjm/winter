@@ -1,6 +1,10 @@
 app:
     name: register
 
+---
+spring:
+  profiles: peer1
+
 server:
     port: 9080
 
@@ -8,14 +12,19 @@ eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
-       defaultZone: http://localhost:${server.port}/eureka/
+       defaultZone: http://localhost:9070/eureka/
 
-security:
-  basic:
-    enabled: true
-  user:
-    name: sandog
-    password: 123456
+---
+spring:
+  profiles: peer2
+
+server:
+    port: 9070
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+       defaultZone: http://localhost:9080/eureka/
