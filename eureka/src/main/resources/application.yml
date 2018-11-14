@@ -1,6 +1,11 @@
 app:
     name: register
 
+spring:
+  application:
+    name: eureka
+
+
 ---
 spring:
   profiles: peer1
