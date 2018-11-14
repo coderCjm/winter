@@ -12,8 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaServer
 public class App {
 
-    public RestTemplate restTemplate;
-
     public static void main(String[] args) {
         System.out.println("------------------- start -------------------");
         SpringApplication.run(App.class, args);
