@@ -36,11 +36,11 @@ public class UserController implements UserFeignClient {
             response.setStatus(AutumnResponse.STATUS_FAIL);
             return response;
         }
-        try {
-            Thread.sleep(500);
-        } catch (Exception e) {
-
-        }
+//        try {
+//            Thread.sleep(500);
+//        } catch (Exception e) {
+//
+//        }
         response.setUser(user);
         System.out.println(response.toString());
         return response;

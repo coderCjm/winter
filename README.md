@@ -41,3 +41,7 @@
 
    1. 编译器直接执行 main 方法
    2. 浏览器 http://localhost:9082/user/get?id=3 查看各个项目打印的日志
+
+## moon
+
+- 供消费者使用的中间jar包
